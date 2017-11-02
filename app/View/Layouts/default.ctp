@@ -22,9 +22,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
+		<?php echo "Bouwgroep-B.S.H" ?>:
 		<?php echo $this->fetch('title'); ?>
 	</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<?php
 		echo $this->Html->meta('icon');
 
@@ -32,25 +33,34 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-		echo $this->Html->css('bootstrap.min');
+		echo $this->Html->css('materialize.min');
+		echo $this->Html->css('style');
 		echo $this->Html->script('jquery');
-		echo $this->Html->script('popper');
-		echo $this->Html->script('bootstrap.min');
+		echo $this->Html->script('materialize.min');
 		echo $this->fetch('script');
 	?>
 </head>
 <body>
 	<?= $this->element('header')?>
-	<div id="container">
-		<div id="content">
-
+	
+	<div id="content">
+		<div class="container">
 			<?php echo $this->Flash->render(); ?>
-
+			  <div class="fixed-action-btn horizontal click-to-toggle">
+			    <a class="btn-floating btn-large red">
+			      <i class="material-icons">menu</i>
+			    </a>
+			    <ul>
+			      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+			      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+			      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+			      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+			    </ul>
+			  </div>
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-			
-		</div>
 	</div>
+	
+	<?= $this->element('footer')?>
 </body>
 </html>
